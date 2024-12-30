@@ -1,0 +1,398 @@
+{
+	"info": {
+		"_postman_id": "14b7e4a1-88eb-4419-9b29-96d11e5c8290",
+		"name": "Mythic Archive Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "39390300"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"test123\",\r\n    \"email\": \"test@example.com\",\r\n    \"password\": \"Test123!\",\r\n    \"confirmPassword\": \"Test123!\",\r\n    \"role\": \"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9000/register"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"test123\",\r\n    \"password\": \"Test123!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9000/login"
+			},
+			"response": []
+		},
+		{
+			"name": "All Public Collections",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:9000/collections/all-public"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Collection By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:9000/collections/15"
+			},
+			"response": []
+		},
+		{
+			"name": "Set Public",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ownerId\" : 1,\r\n    \"collectionName\": \"The Best Collection\",\r\n    \"thumbnailUrl\": \"\",\r\n    \"isPublic\" : true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9000/collections/15/set-public"
+			},
+			"response": []
+		},
+		{
+			"name": "Set Private",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ownerId\" : 1,\r\n    \"collectionName\": \"The Best Collection\",\r\n    \"thumbnailUrl\": \"\",\r\n    \"isPublic\" : true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9000/collections/15/set-public"
+			},
+			"response": []
+		},
+		{
+			"name": "Rename Collection",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/collections/15/rename?collectionName=My Collection",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"collections",
+						"15",
+						"rename"
+					],
+					"query": [
+						{
+							"key": "collectionName",
+							"value": "My Collection"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set Collection Thumbnail",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/collections/15/rename?collectionName=My Collection",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"collections",
+						"15",
+						"rename"
+					],
+					"query": [
+						{
+							"key": "collectionName",
+							"value": "My Collection"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:9000/user/15/username"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Collection By User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:9000/collections/user/15"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cards In Collection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:9000/collections/3/cards"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Total Cards In Collection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:9000/collections/15/total-cards"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Count of Card In Collection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/collections/15/card-count?cardId=047f2cc9-3073-41f5-81c3-7b6b28b374d0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"collections",
+						"15",
+						"card-count"
+					],
+					"query": [
+						{
+							"key": "cardId",
+							"value": "047f2cc9-3073-41f5-81c3-7b6b28b374d0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Card",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n\r\n{\r\n    \"card\": {\r\n        \"cardId\": \"b443504e-1b25-4565-bad7-2575826c7bb9\",\r\n        \"cardName\": \"A-Alrund, God of the Cosmos // A-Hakka, Whispering Raven\",\r\n        \"cardColor\": \"UU\",\r\n        \"manaCost\": \"{3}{U}{U}\",\r\n        \"rarity\": \"mythic\",\r\n        \"price\": -1,\r\n        \"setName\": \"Kaldheim\",\r\n        \"thumbnailUrl\": \"https://cards.scryfall.io/art_crop/front/b/4/b443504e-1b25-4565-bad7-2575826c7bb9.jpg?1682292303\",\r\n        \"imageUrl\": \"https://cards.scryfall.io/large/front/b/4/b443504e-1b25-4565-bad7-2575826c7bb9.jpg?1682292303\",\r\n        \"cardType\": \"Legendary Creature — God // Legendary Creature — Bird\"\r\n},\r\n    \"userId\": 15,\r\n    \"quantity\" : 17\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9000/collections/add"
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Card",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"card\": {\r\n        \"cardId\": \"b443504e-1b25-4565-bad7-2575826c7bb9\",\r\n        \"cardName\": \"A-Alrund, God of the Cosmos // A-Hakka, Whispering Raven\",\r\n        \"cardColor\": \"UU\",\r\n        \"manaCost\": \"{3}{U}{U}\",\r\n        \"rarity\": \"mythic\",\r\n        \"price\": -1,\r\n        \"setName\": \"Kaldheim\",\r\n        \"thumbnailUrl\": \"https://cards.scryfall.io/art_crop/front/b/4/b443504e-1b25-4565-bad7-2575826c7bb9.jpg?1682292303\",\r\n        \"imageUrl\": \"https://cards.scryfall.io/large/front/b/4/b443504e-1b25-4565-bad7-2575826c7bb9.jpg?1682292303\",\r\n        \"cardType\": \"Legendary Creature — God // Legendary Creature — Bird\"\r\n},\r\n    \"userId\": 15,\r\n    \"quantity\" : 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9000/collections/remove"
+			},
+			"response": []
+		},
+		{
+			"name": "Remove All Cards",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"card\": {\r\n        \"cardId\": \"b443504e-1b25-4565-bad7-2575826c7bb9\",\r\n        \"cardName\": \"A-Alrund, God of the Cosmos // A-Hakka, Whispering Raven\",\r\n        \"cardColor\": \"UU\",\r\n        \"manaCost\": \"{3}{U}{U}\",\r\n        \"rarity\": \"mythic\",\r\n        \"price\": -1,\r\n        \"setName\": \"Kaldheim\",\r\n        \"thumbnailUrl\": \"https://cards.scryfall.io/art_crop/front/b/4/b443504e-1b25-4565-bad7-2575826c7bb9.jpg?1682292303\",\r\n        \"imageUrl\": \"https://cards.scryfall.io/large/front/b/4/b443504e-1b25-4565-bad7-2575826c7bb9.jpg?1682292303\",\r\n        \"cardType\": \"Legendary Creature — God // Legendary Creature — Bird\"\r\n},\r\n    \"userId\": 15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9000/collections/remove-all"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Deck",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ownerId\" : 15,\r\n    \"deckName\" : \"My Deck\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9000/decks/create"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Card to Deck",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n\r\n{\r\n    \"card\": {\r\n        \"cardId\": \"b443504e-1b25-4565-bad7-2575826c7bb9\",\r\n        \"cardName\": \"A-Alrund, God of the Cosmos // A-Hakka, Whispering Raven\",\r\n        \"cardColor\": \"UU\",\r\n        \"manaCost\": \"{3}{U}{U}\",\r\n        \"rarity\": \"mythic\",\r\n        \"price\": -1,\r\n        \"setName\": \"Kaldheim\",\r\n        \"thumbnailUrl\": \"https://cards.scryfall.io/art_crop/front/b/4/b443504e-1b25-4565-bad7-2575826c7bb9.jpg?1682292303\",\r\n        \"imageUrl\": \"https://cards.scryfall.io/large/front/b/4/b443504e-1b25-4565-bad7-2575826c7bb9.jpg?1682292303\",\r\n        \"cardType\": \"Legendary Creature — God // Legendary Creature — Bird\"\r\n},\r\n    \"userId\": 15,\r\n    \"quantity\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9000/decks/add"
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Card from Deck",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"card\": {\r\n        \"cardId\": \"b443504e-1b25-4565-bad7-2575826c7bb9\",\r\n        \"cardName\": \"A-Alrund, God of the Cosmos // A-Hakka, Whispering Raven\",\r\n        \"cardColor\": \"UU\",\r\n        \"manaCost\": \"{3}{U}{U}\",\r\n        \"rarity\": \"mythic\",\r\n        \"price\": -1,\r\n        \"setName\": \"Kaldheim\",\r\n        \"thumbnailUrl\": \"https://cards.scryfall.io/art_crop/front/b/4/b443504e-1b25-4565-bad7-2575826c7bb9.jpg?1682292303\",\r\n        \"imageUrl\": \"https://cards.scryfall.io/large/front/b/4/b443504e-1b25-4565-bad7-2575826c7bb9.jpg?1682292303\",\r\n        \"cardType\": \"Legendary Creature — God // Legendary Creature — Bird\"\r\n},\r\n    \"userId\": 15,\r\n    \"quantity\" : 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9000/collections/remove"
+			},
+			"response": []
+		},
+		{
+			"name": "Remove All of Card from Deck",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"card\": {\r\n        \"cardId\": \"b443504e-1b25-4565-bad7-2575826c7bb9\",\r\n        \"cardName\": \"A-Alrund, God of the Cosmos // A-Hakka, Whispering Raven\",\r\n        \"cardColor\": \"UU\",\r\n        \"manaCost\": \"{3}{U}{U}\",\r\n        \"rarity\": \"mythic\",\r\n        \"price\": -1,\r\n        \"setName\": \"Kaldheim\",\r\n        \"thumbnailUrl\": \"https://cards.scryfall.io/art_crop/front/b/4/b443504e-1b25-4565-bad7-2575826c7bb9.jpg?1682292303\",\r\n        \"imageUrl\": \"https://cards.scryfall.io/large/front/b/4/b443504e-1b25-4565-bad7-2575826c7bb9.jpg?1682292303\",\r\n        \"cardType\": \"Legendary Creature — God // Legendary Creature — Bird\"\r\n},\r\n    \"userId\": 15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:9000/collections/remove-all"
+			},
+			"response": []
+		},
+		{
+			"name": "Collection Stats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:9000/collections/3/stats"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0MTIzIiwiYXV0aCI6IlJPTEVfVVNFUiIsImV4cCI6MTczNDA5NjMyNn0.-xbSI1X6Um2RWLFqPTvgm6ZrRpOccfIve9coUiAtKtybY2xxVOGsYm8k-9IWP06kFwtMho3W9wMpcvVhFMlc0A"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

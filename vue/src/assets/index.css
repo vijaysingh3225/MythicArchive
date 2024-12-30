@@ -1,0 +1,32 @@
+:root {
+  --onyx: #393E41; 
+  --timberwolf:#D3D0CB;
+  --platinum:#E7E5DF; 
+  --keppel:#44BBA4;
+  --perry:#1e7a76;
+  --darker-perry:#16635f;
+  --affron:#E7BB41;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--timberwolf);
+  color: var(--timberwolf);
+  font-family: 'Garamond', 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+}
+
+.sign-up-link,
+.sign-up-link:visited {
+  color: var(--platinum);
+}
+
+h1 {
+  text-align: center;
+}

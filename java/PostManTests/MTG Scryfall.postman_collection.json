@@ -1,0 +1,171 @@
+{
+	"info": {
+		"_postman_id": "38417a44-613e-41a9-bb8c-5daa06be4718",
+		"name": "MTG Scryfall",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39066516"
+	},
+	"item": [
+		{
+			"name": "Get All Cards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.scryfall.com/cards",
+					"protocol": "https",
+					"host": [
+						"api",
+						"scryfall",
+						"com"
+					],
+					"path": [
+						"cards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Card by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.scryfall.com/cards/e882c9f9-bf30-46b6-bedc-379d2c80e5cb",
+					"protocol": "https",
+					"host": [
+						"api",
+						"scryfall",
+						"com"
+					],
+					"path": [
+						"cards",
+						"e882c9f9-bf30-46b6-bedc-379d2c80e5cb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Card by SetCode&Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.scryfall.com/cards/xln/96",
+					"protocol": "https",
+					"host": [
+						"api",
+						"scryfall",
+						"com"
+					],
+					"path": [
+						"cards",
+						"xln",
+						"96"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Card by Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.scryfall.com/cards/named?fuzzy=beseech+queen",
+					"protocol": "https",
+					"host": [
+						"api",
+						"scryfall",
+						"com"
+					],
+					"path": [
+						"cards",
+						"named"
+					],
+					"query": [
+						{
+							"key": "fuzzy",
+							"value": "beseech+queen"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Sets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.scryfall.com/sets",
+					"protocol": "https",
+					"host": [
+						"api",
+						"scryfall",
+						"com"
+					],
+					"path": [
+						"sets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Set by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.scryfall.com/sets/ltr",
+					"protocol": "https",
+					"host": [
+						"api",
+						"scryfall",
+						"com"
+					],
+					"path": [
+						"sets",
+						"ltr"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://cards.scryfall.io/small/front/e/8/e882c9f9-bf30-46b6-bedc-379d2c80e5cb.jpg?1627701221",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cards.scryfall.io/small/front/e/8/e882c9f9-bf30-46b6-bedc-379d2c80e5cb.jpg?1627701221",
+					"protocol": "https",
+					"host": [
+						"cards",
+						"scryfall",
+						"io"
+					],
+					"path": [
+						"small",
+						"front",
+						"e",
+						"8",
+						"e882c9f9-bf30-46b6-bedc-379d2c80e5cb.jpg"
+					],
+					"query": [
+						{
+							"key": "1627701221",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
